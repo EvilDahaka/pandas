@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 df = pd.read_csv('IMDB-Movie-Data.csv')
 print('___________')
 print(df.info())
@@ -18,5 +19,25 @@ average_rating_by_genre = data_cleaned.groupby('Genre')['Rating'].mean().sort_va
 
 print("Середній рейтинг фільмів за жанрами:")
 print(average_rating_by_genre)
+
+# df['Rank'].value_counts().plot(kind = 'pie')
+# plt.show()
+
+#df.plot(x = 'Rating',
+        #y = 'Year',
+        #kind = 'scatter')
+
+#plt.show()
+
+df['Genre'].value_counts().plot(kind = 'pie')
+plt.show()
+
+df['Rank'].value_counts().plot(kind = 'bar')
+plt.show()
+
+
+        
+
+
 
 
